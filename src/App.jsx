@@ -11,6 +11,12 @@ const GET_USER_DETAILS = gql`
       email
       location
       pronouns
+      followers {
+        totalCount
+      }
+      following {
+        totalCount
+      }
       repositories(first: 10) {
         totalCount
         nodes {
@@ -19,6 +25,7 @@ const GET_USER_DETAILS = gql`
           id
           languages(first: 5) {
             nodes {
+              id
               color
               name
             }
@@ -47,6 +54,7 @@ function App() {
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit();
+          console.log(data);
         }}
       >
         <input

@@ -5,7 +5,8 @@ export default function Form({
   setInputValue,
   inputValue,
   data,
-  error
+  error, 
+  loading
 }) {
   return (
     <form
@@ -13,7 +14,7 @@ export default function Form({
       onSubmit={(e) => {
         e.preventDefault();
         handleSubmit();
-        console.log(data, error);
+        console.log(data, error, loading);
       }}
     >
       <input
@@ -39,5 +40,6 @@ Form.propTypes = {
   setInputValue: PropTypes.func,
   inputValue: PropTypes.string,
   data: PropTypes.object,
-  error: PropTypes.object
+  error: PropTypes.object,
+  loading: PropTypes.bool
 };

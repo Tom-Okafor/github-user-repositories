@@ -23,6 +23,7 @@ function App() {
         setInputValue={setInputValue}
         data={data}
         error={error}
+        loading={loading}
       />
     </div>
   );

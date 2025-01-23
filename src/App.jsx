@@ -2,7 +2,7 @@ import { useLazyQuery } from "@apollo/client";
 import { useState } from "react";
 import Logo from "./components/Logo";
 import Form from "./components/Form";
-import { GET_USER_DETAILS } from "./constants";
+import { GET_USER_DETAILS, QUERY_STATES } from "./constants";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -17,14 +17,14 @@ function App() {
       <h1 className="text-yellow-400 text-5xl font-bold font-serif">
         Github User
       </h1>
-      <Form
-        inputValue={inputValue}
-        handleSubmit={handleSubmit}
-        setInputValue={setInputValue}
-        data={data}
-        error={error}
-        loading={loading}
-      />
+
+      <QUERY_STATES.Provider value={{ loading, error, data }}>
+        <Form
+          inputValue={inputValue}
+          handleSubmit={handleSubmit}
+          setInputValue={setInputValue}
+        />
+      </QUERY_STATES.Provider>
     </div>
   );
 }

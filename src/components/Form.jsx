@@ -1,13 +1,9 @@
 import PropTypes from "prop-types";
+import { QUERY_STATES } from "../constants";
+import { useContext } from "react";
 
-export default function Form({
-  handleSubmit,
-  setInputValue,
-  inputValue,
-  data,
-  error, 
-  loading
-}) {
+export default function Form({ handleSubmit, setInputValue, inputValue }) {
+  const { loading, data, error } = useContext(QUERY_STATES);
   return (
     <form
       className="space-x-4"
@@ -39,7 +35,4 @@ Form.propTypes = {
   handleSubmit: PropTypes.func,
   setInputValue: PropTypes.func,
   inputValue: PropTypes.string,
-  data: PropTypes.object,
-  error: PropTypes.object,
-  loading: PropTypes.bool
 };

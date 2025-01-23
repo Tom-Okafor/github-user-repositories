@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
+import { createContext } from "react";
 
 const HTTP_LINK = createHttpLink({
   uri: "https://api.github.com/graphql",
@@ -63,3 +64,5 @@ export const GET_USER_DETAILS = gql`
     }
   }
 `;
+
+export const QUERY_STATES = createContext();

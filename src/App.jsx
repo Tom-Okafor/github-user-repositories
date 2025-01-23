@@ -22,6 +22,7 @@ function App() {
         handleSubmit={handleSubmit}
         setInputValue={setInputValue}
         data={data}
+        error={error}
       />
     </div>
   );

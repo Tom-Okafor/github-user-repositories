@@ -5,6 +5,7 @@ export default function Form({
   setInputValue,
   inputValue,
   data,
+  error
 }) {
   return (
     <form
@@ -12,7 +13,7 @@ export default function Form({
       onSubmit={(e) => {
         e.preventDefault();
         handleSubmit();
-        console.log(data);
+        console.log(data, error);
       }}
     >
       <input
@@ -26,7 +27,7 @@ export default function Form({
       />
       <input
         type="submit"
-        value="Get Info"
+        value="Get Details"
         className="border-2 border-[#74fce4] [box-shadow:0px_2px_8px_-1px_#999] rounded-xl px-3 py-2 text-yellow-400 font-serif hover:border-yellow-400 hover:text-[#74fce4] duration-300 cursor-pointer"
       />
     </form>
@@ -38,4 +39,5 @@ Form.propTypes = {
   setInputValue: PropTypes.func,
   inputValue: PropTypes.string,
   data: PropTypes.object,
+  error: PropTypes.object
 };

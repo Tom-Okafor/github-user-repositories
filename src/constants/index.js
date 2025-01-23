@@ -1,4 +1,4 @@
-import { gql} from "@apollo/client";
+import { gql } from "@apollo/client";
 
 export const GET_USER_DETAILS = gql`
   query getUserDetails($username: String!) {
@@ -16,8 +16,10 @@ export const GET_USER_DETAILS = gql`
       following {
         totalCount
       }
-      repositories(first: 10) {
+      repositories(first: 1) {
         totalCount
+      }
+      topRepositories(orderBy: { direction: ASC, field: NAME }, first: 1) {
         nodes {
           description
           url

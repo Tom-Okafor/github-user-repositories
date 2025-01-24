@@ -7,9 +7,13 @@ import UserCard from "./UserDetails/UserCard";
 export default function Response() {
   const { loading, error, data } = useContext(QUERY_STATES);
   return (
-    <>
+    <div>
       {loading ? <Loading loading={loading} /> : error && <Error />}
       <UserCard />
-    </>
+      <UserCard />
+      <UserCard />
+      <UserCard />
+      <UserCard />
+    </div>
   );
 }

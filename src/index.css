@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.usercard:nth-child(odd) .repobox .circle {
+    fill: #ffeb3b;
+}
+
+.usercard:nth-child(even) .repobox .circle {
+    fill: #ec407a;
+}
+
+.usercard:nth-child(odd) .repobox .g {
+    fill: #ec407a;
+}
+
+.usercard:nth-child(even) .repobox .g {
+    fill: #35fd74;
+}
+
+.usercard:nth-child(3) .repobox .circle {
+        fill: #00c853;
+}
+
+.usercard:nth-child(3) .repobox .g {
+        fill: #ffeb3b;
+}

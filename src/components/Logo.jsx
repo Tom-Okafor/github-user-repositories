@@ -1,11 +1,10 @@
 export default function Logo() {
   return (
     <svg
-      width="50px"
       viewBox="0 0 20 20"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute left-8 top-4"
+      className="absolute left-8 top-4 w-[35px] sm:w-[50px]"
     >
       <title>github logo</title>
       <desc>Created with Sketch.</desc>

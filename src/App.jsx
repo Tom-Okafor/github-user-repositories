@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="w-full min-h-lvh flex flex-col justify-center items-center gap-8 bg-slate-900">
       <Logo />
-      <h1 className="text-yellow-400 text-3xl  sm:text-5xl lg:text-6xl font-bold font-serif mt-[100px] sm:mt-0">
+      <h1 className="text-yellow-400 text-3xl  sm:text-5xl lg:text-6xl font-bold font-serif mt-[100px]">
         Github User
       </h1>
 

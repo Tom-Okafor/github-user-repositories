@@ -10,10 +10,6 @@ export default function Response() {
     <div>
       {loading ? <Loading loading={loading} /> : error && <Error />}
       <UserCard />
-      <UserCard />
-      <UserCard />
-      <UserCard />
-      <UserCard />
     </div>
   );
 }

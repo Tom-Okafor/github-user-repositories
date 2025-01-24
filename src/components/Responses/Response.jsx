@@ -1,8 +1,9 @@
 import { QUERY_STATES } from "../../constants";
 import { useContext } from "react";
 import Loading from "./Loading";
+import Error from "./Error";
 
 export default function Response() {
-    const {loading, error, data} = useContext(QUERY_STATES)
-    return <Loading loading={loading} />
+  const { loading, error, data } = useContext(QUERY_STATES);
+  return <>{loading ? <Loading loading={loading} /> : error && <Error />}</>;
 }

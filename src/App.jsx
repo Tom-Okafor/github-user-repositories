@@ -3,6 +3,7 @@ import { useState } from "react";
 import Logo from "./components/Logo";
 import Form from "./components/Form";
 import { GET_USER_DETAILS, QUERY_STATES } from "./constants";
+import Response from "./components/Responses/Response";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -24,6 +25,7 @@ function App() {
           handleSubmit={handleSubmit}
           setInputValue={setInputValue}
         />
+        <Response />
       </QUERY_STATES.Provider>
     </div>
   );

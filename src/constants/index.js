@@ -70,3 +70,10 @@ export const GET_USER_DETAILS = gql`
 `;
 
 export const QUERY_STATES = createContext();
+
+export const LOADING_IMAGES = new Array(
+  "dancingmonkey1.png",
+  "dancingmonkey2.png",
+  "dancingmonkey3.png",
+  "dancingmonkey4.png"
+);

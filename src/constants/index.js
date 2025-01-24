@@ -44,9 +44,11 @@ export const GET_USER_DETAILS = gql`
             }
           }
           name
+          forkCount
+          stargazerCount
         }
       }
-      topRepositories(orderBy: { direction: ASC, field: NAME }, first: 1) {
+      topRepositories(orderBy: { direction: ASC, field: NAME }, first: 5) {
         nodes {
           description
           url
@@ -59,6 +61,8 @@ export const GET_USER_DETAILS = gql`
             }
           }
           name
+          forkCount
+          stargazerCount
         }
       }
     }

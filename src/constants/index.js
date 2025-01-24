@@ -23,7 +23,6 @@ export const GET_USER_DETAILS = gql`
       url
       email
       location
-      pronouns
       followers {
         totalCount
       }

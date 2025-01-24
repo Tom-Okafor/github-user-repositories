@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-export default function RepositoryCard(props) {
+export default function RepositoryCard({name, description, stars, forks, languages, url, date}) {
   return (
-    <div className="border-2 border-[#74fce4] rounded-2xl shadow-[0_0_8px_#74fce4ae] px-3 py-4 text-white relative flex gap-5 repobox">
+    <div className="rounded-2xl shadow-[0_0_8px_#74fce4ae] px-3 py-4 text-white relative flex gap-5 repobox bg-slate-800">
       <svg
         height="50px"
         width="50px"
@@ -29,14 +29,17 @@ export default function RepositoryCard(props) {
         </g>
       </svg>
       <ul className="font-serif space-y-[10px]">
-        <li>{props.name}</li>
-        <li>{props.description}</li>
         <li>
-          <span>{props.forks} forks</span> <span>{props.stars} stars</span>
+          <span>{name}</span>
+          <span>{date}</span>
         </li>
-        <li>{props.languages}</li>
+        <li>{description}</li>
         <li>
-          <a href={props.url}>view repository</a>
+          <span>{forks} forks</span> <span>{stars} stars</span>
+        </li>
+        <li>{languages}</li>
+        <li>
+          <a href={url}>view repository</a>
         </li>
       </ul>
     </div>
@@ -50,4 +53,5 @@ RepositoryCard.propTypes = {
   forks: PropTypes.number,
   languages: PropTypes.object,
   url: PropTypes.string,
+  date: PropTypes.string,
 };

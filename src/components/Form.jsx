@@ -11,6 +11,7 @@ export default function Form({ handleSubmit, setInputValue, inputValue }) {
         e.preventDefault();
         handleSubmit();
         console.log(data, error, loading);
+        console.log(new Date(data.user.repositories.nodes[7].createdAt).toDateString())
       }}
     >
       <input

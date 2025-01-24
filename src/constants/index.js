@@ -46,6 +46,7 @@ export const GET_USER_DETAILS = gql`
           name
           forkCount
           stargazerCount
+          createdAt
         }
       }
       topRepositories(orderBy: { direction: ASC, field: NAME }, first: 5) {
@@ -63,6 +64,7 @@ export const GET_USER_DETAILS = gql`
           name
           forkCount
           stargazerCount
+          createdAt
         }
       }
     }

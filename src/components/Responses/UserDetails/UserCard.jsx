@@ -1,4 +1,4 @@
-import RepositoryCard from "./RepostoryCard";
+import RepositoryCard from "./RepositoryCard";
 
 export default function UserCard() {
   return (

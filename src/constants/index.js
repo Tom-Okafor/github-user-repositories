@@ -30,7 +30,7 @@ export const GET_USER_DETAILS = gql`
       following {
         totalCount
       }
-      repositories(first: 5, orderBy: { direction: DESC, field: CREATED_AT }) {
+      repositories(first: 10, orderBy: { direction: DESC, field: CREATED_AT }) {
         totalCount
         nodes {
           description

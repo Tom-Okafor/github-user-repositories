@@ -1,30 +1,68 @@
 import RepositoryCard from "./RepositoryCard";
+import { useContext } from "react";
+import { QUERY_STATES } from "../../../constants";
 
 export default function UserCard() {
+  const {
+    data: {
+      user: {
+        avatarUrl,
+        bio,
+        name,
+        email,
+        url,
+        repositories: { nodes, totalCount },
+        topRepositories: { nodes: topNodes },
+        location,
+        followers: { totalCount: followers },
+        following: { totalCount: following },
+      },
+    },
+  } = useContext(QUERY_STATES);
+  console.log(
+    avatarUrl,
+    bio,
+    name,
+    email,
+    url,
+    nodes,
+    totalCount,
+    topNodes,
+    location,
+    followers,
+    following
+  );
+  console.log(email == false);
   return (
-    <section className="py-8">
+    <section className="py-8 text-white">
       <div>
-        <img src="" alt="user profile" />
-        <p>user name</p>
-        <p>user bio</p>
+        <img src={avatarUrl} alt="user profile" />
+        <p>{name}</p>
+        <p>{bio}</p>
         <p>
-          <span>email</span> <span>location</span>
+          <span>{email}</span> <span>{location}</span>
         </p>
-        <a href="">Visit Github Page</a>
+        <a href={url}>Visit Github Page</a>
       </div>
       <ul>
         <li>
-          <span>num</span> <span>followers</span>
+          <span>{followers}</span> <span>followers</span>
         </li>
         <li>
-          <span>num</span> <span>follwing</span>
+          <span>{following}</span> <span>follwing</span>
         </li>
         <li>
-          <span>num</span> <span>total repositories</span>
+          <span>{totalCount}</span> <span>total repositories</span>
         </li>
       </ul>
       <div>
         <h3>top repositories</h3>
+        <div className="usercard">
+          <RepositoryCard />
+        </div>
+      </div>
+      <div>
+        <h3>latest repositories</h3>
         <div className="usercard">
           <RepositoryCard />
         </div>

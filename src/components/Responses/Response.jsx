@@ -8,8 +8,13 @@ export default function Response() {
   const { loading, error, data } = useContext(QUERY_STATES);
   return (
     <div>
-      {loading ? <Loading loading={loading} /> : error && <Error />}
-      <UserCard />
+      {loading ? (
+        <Loading loading={loading} />
+      ) : error ? (
+        <Error />
+      ) : (
+        data && <UserCard />
+      )}
     </div>
   );
 }

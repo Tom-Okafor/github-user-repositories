@@ -1,17 +1,12 @@
 import PropTypes from "prop-types";
-import { QUERY_STATES } from "../constants";
-import { useContext } from "react";
 
 export default function Form({ handleSubmit, setInputValue, inputValue }) {
-  const { loading, data, error } = useContext(QUERY_STATES);
   return (
     <form
       className="flex gap-6 flex-col sm:flex-row justify-center items-center"
       onSubmit={(e) => {
         e.preventDefault();
         handleSubmit();
-        console.log(data, error, loading);
-        console.log(new Date(data.user.repositories.nodes[7].createdAt).toDateString())
       }}
     >
       <input

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Language from "./Language";
 
 export default function RepositoryCard({name, description, stars, forks, languages, url, date}) {
   return (
@@ -37,7 +38,11 @@ export default function RepositoryCard({name, description, stars, forks, languag
         <li>
           <span>{forks} forks</span> <span>{stars} stars</span>
         </li>
-        <li>{languages}</li>
+        <li>{
+          languages.map(({name, color, id}) => {
+            <Language color={color} language={name} id={id}/>
+          })
+          }</li>
         <li>
           <a href={url}>view repository</a>
         </li>

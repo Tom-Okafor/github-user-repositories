@@ -30,7 +30,7 @@ export default function UserCard() {
     topNodes,
     location,
     followers,
-    following,
+    following
   );
   console.log(email == false);
   return (
@@ -58,13 +58,57 @@ export default function UserCard() {
       <div>
         <h3>top repositories</h3>
         <div className="usercard">
-          <RepositoryCard />
+          {topNodes.map(
+            ({
+              name,
+              description,
+              createdAt,
+              id,
+              languages: { nodes },
+              url,
+              stargazerCount,
+              forkCount,
+            }) => {
+            return  <RepositoryCard
+                name={name}
+                description={description}
+                date={createdAt}
+                key={id}
+                url={url}
+                languages={nodes}
+                stars={stargazerCount}
+                forks={forkCount}
+              />;
+            }
+          )}
         </div>
       </div>
       <div>
         <h3>latest repositories</h3>
         <div className="usercard">
-          <RepositoryCard />
+          {nodes.map(
+            ({
+              name,
+              description,
+              createdAt,
+              id,
+              languages: { nodes },
+              url,
+              stargazerCount,
+              forkCount,
+            }) => {
+           return   <RepositoryCard
+                name={name}
+                description={description}
+                date={createdAt}
+                key={id}
+                url={url}
+                languages={nodes}
+                stars={stargazerCount}
+                forks={forkCount}
+              />;
+            }
+          )}
         </div>
       </div>
     </section>

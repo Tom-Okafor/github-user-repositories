@@ -1,7 +1,15 @@
 import PropTypes from "prop-types";
 import Language from "./Language";
 
-export default function RepositoryCard({name, description, stars, forks, languages, url, date}) {
+export default function RepositoryCard({
+  name,
+  description,
+  stars,
+  forks,
+  languages,
+  url,
+  date,
+}) {
   return (
     <div className="rounded-2xl shadow-[0_0_8px_#74fce4ae] px-3 py-4 text-white relative flex gap-5 repobox bg-slate-800">
       <svg
@@ -38,11 +46,11 @@ export default function RepositoryCard({name, description, stars, forks, languag
         <li>
           <span>{forks} forks</span> <span>{stars} stars</span>
         </li>
-        <li>{
-          languages.map(({name, color, id}) => {
-            <Language color={color} language={name} id={id}/>
-          })
-          }</li>
+        <li className="flex space-x-5">
+          {languages.map(({ name, color, id }) => {
+            return <Language color={color} language={name} key={id} />;
+          })}
+        </li>
         <li>
           <a href={url}>view repository</a>
         </li>
@@ -56,7 +64,7 @@ RepositoryCard.propTypes = {
   description: PropTypes.string,
   stars: PropTypes.number,
   forks: PropTypes.number,
-  languages: PropTypes.object,
+  languages: PropTypes.array,
   url: PropTypes.string,
   date: PropTypes.string,
 };

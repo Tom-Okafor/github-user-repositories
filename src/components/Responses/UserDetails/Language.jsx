@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 export default function Language({color, language}) {
   return (
-    <div className="flex space-x-4 items-center">
+    <div className="flex space-x-2 items-center">
       <div
         className="size-[10px] rounded-full"
         style={{ backgroundColor: `${color}` }}

@@ -46,3 +46,4 @@ Form.propTypes = {
   setInputValue: PropTypes.func,
   inputValue: PropTypes.string,
 };
+

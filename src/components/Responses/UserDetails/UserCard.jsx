@@ -30,7 +30,7 @@ export default function UserCard() {
     topNodes,
     location,
     followers,
-    following
+    following,
   );
   console.log(email == false);
   return (

@@ -34,7 +34,7 @@ export default function UserCard() {
   );
   console.log(email == false);
   return (
-    <section className="py-8 text-white">
+    <section className="py-8 text-white max-w-[600px] w-[80vw]">
       <div>
         <img src={avatarUrl} alt="user profile" />
         <p>{name}</p>
@@ -57,7 +57,7 @@ export default function UserCard() {
       </ul>
       <div>
         <h3>top repositories</h3>
-        <div className="usercard">
+        <div className="usercard flex flex-col gap-12 pb-16">
           {topNodes.map(
             ({
               name,
@@ -69,23 +69,25 @@ export default function UserCard() {
               stargazerCount,
               forkCount,
             }) => {
-            return  <RepositoryCard
-                name={name}
-                description={description}
-                date={createdAt}
-                key={id}
-                url={url}
-                languages={nodes}
-                stars={stargazerCount}
-                forks={forkCount}
-              />;
+              return (
+                <RepositoryCard
+                  name={name}
+                  description={description}
+                  date={createdAt}
+                  key={id}
+                  url={url}
+                  languages={nodes}
+                  stars={stargazerCount}
+                  forks={forkCount}
+                />
+              );
             }
           )}
         </div>
       </div>
       <div>
         <h3>latest repositories</h3>
-        <div className="usercard">
+        <div className="usercard usercard flex flex-col gap-12 pb-16">
           {nodes.map(
             ({
               name,
@@ -97,16 +99,18 @@ export default function UserCard() {
               stargazerCount,
               forkCount,
             }) => {
-           return   <RepositoryCard
-                name={name}
-                description={description}
-                date={createdAt}
-                key={id}
-                url={url}
-                languages={nodes}
-                stars={stargazerCount}
-                forks={forkCount}
-              />;
+              return (
+                <RepositoryCard
+                  name={name}
+                  description={description}
+                  date={createdAt}
+                  key={id}
+                  url={url}
+                  languages={nodes}
+                  stars={stargazerCount}
+                  forks={forkCount}
+                />
+              );
             }
           )}
         </div>

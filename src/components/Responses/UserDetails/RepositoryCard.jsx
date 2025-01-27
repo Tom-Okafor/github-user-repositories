@@ -38,9 +38,9 @@ export default function RepositoryCard({
         </g>
       </svg>
       <ul className="font-serif space-y-[10px]">
-        <li className="space-x-2.5">
+        <li className="flex justify-between">
           <span className="capitalize">{name.split("-").join(" ")}</span>
-          <span>{date}</span>
+          <span> {new Date(date).toDateString()}</span>
         </li>
         <li>{description}</li>
         <li>

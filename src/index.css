@@ -6,8 +6,16 @@
     fill: #ffeb3b;
 }
 
+.usercard .repobox:nth-child(odd) .name {
+    color: #ec407a;
+}
+
 .usercard .repobox:nth-child(even) .circle {
     fill: #ec407a;
+}
+
+.usercard .repobox:nth-child(even) .name {
+    color: #35fd74;
 }
 
 .usercard .repobox:nth-child(odd) .g {
@@ -22,7 +30,10 @@
     fill: #00c853;
 }
 
+.usercard .repobox:nth-child(3n + 3) .name {
+    color: #ffeb3b;
+}
+
 .usercard .repobox:nth-child(3n + 3) .g {
     fill: #ffeb3b;
 }
-

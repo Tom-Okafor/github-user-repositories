@@ -11,7 +11,7 @@ export default function RepositoryCard({
   date,
 }) {
   return (
-    <div className="rounded-2xl shadow-[0_0_8px_#74fce4ae] px-3 py-4 text-white relative flex gap-5 repobox bg-slate-800">
+    <div className="rounded-2xl shadow-[0_0_8px_#74fce4ae] px-8 py-8 text-white relative flex gap-5 repobox bg-slate-800 border-box">
       <svg
         height="50px"
         width="50px"
@@ -20,7 +20,7 @@ export default function RepositoryCard({
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
         xmlSpace="preserve"
-        className=""
+        className="shrink-0"
       >
         <circle
           className="has-repobox:even:fill-pink-600 has-repobox:odd:fill-yellow-400 circle"
@@ -39,7 +39,7 @@ export default function RepositoryCard({
       </svg>
       <ul className="font-serif space-y-[10px]">
         <li className="flex justify-between">
-          <span className="capitalize">{name.split("-").join(" ")}</span>
+          <span className="capitalize name font-bold text-lg">{name.split("-").join(" ")}</span>
           <span> {new Date(date).toDateString()}</span>
         </li>
         <li>{description}</li>

@@ -2,26 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.usercard:nth-child(odd) .repobox .circle {
+.usercard .repobox:nth-child(odd) .circle {
     fill: #ffeb3b;
 }
 
-.usercard:nth-child(even) .repobox .circle {
+.usercard .repobox:nth-child(even) .circle {
     fill: #ec407a;
 }
 
-.usercard:nth-child(odd) .repobox .g {
+.usercard .repobox:nth-child(odd) .g {
     fill: #ec407a;
 }
 
-.usercard:nth-child(even) .repobox .g {
+.usercard .repobox:nth-child(even) .g {
     fill: #35fd74;
 }
 
-.usercard:nth-child(3) .repobox .circle {
+.usercard .repobox:nth-child(3n + 3) .circle {
         fill: #00c853;
 }
 
-.usercard:nth-child(3) .repobox .g {
+.usercard .repobox:nth-child(3n + 3) .g {
         fill: #ffeb3b;
 }

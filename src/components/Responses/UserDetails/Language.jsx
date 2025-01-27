@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 export default function Language({color, language}) {
   return (
-    <div className="flex space-x-2 items-center">
+    <div className="flex space-x-3 items-center">
       <div
         className="size-[10px] rounded-full"
         style={{ backgroundColor: `${color}` }}
       ></div>
-      <p style={{ color: `${color}` }}>{language}</p>
+      <p style={{ backgroundColor: `${color}` }} className="px-4 py-1.5 rounded-full text-black font-[cursive]">{language}</p>
     </div>
   );
 }

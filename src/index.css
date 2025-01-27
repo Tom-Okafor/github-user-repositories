@@ -19,9 +19,10 @@
 }
 
 .usercard .repobox:nth-child(3n + 3) .circle {
-        fill: #00c853;
+    fill: #00c853;
 }
 
 .usercard .repobox:nth-child(3n + 3) .g {
-        fill: #ffeb3b;
+    fill: #ffeb3b;
 }
+

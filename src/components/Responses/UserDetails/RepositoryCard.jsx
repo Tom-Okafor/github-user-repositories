@@ -46,7 +46,7 @@ export default function RepositoryCard({
         <li>
           <span>{forks} forks</span> <span>{stars} stars</span>
         </li>
-        <li className="flex space-x-5">
+        <li className="flex space-x-6 flex-wrap">
           {languages.map(({ name, color, id }) => {
             return <Language color={color} language={name} key={id} />;
           })}

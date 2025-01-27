@@ -38,8 +38,8 @@ export default function RepositoryCard({
         </g>
       </svg>
       <ul className="font-serif space-y-[10px]">
-        <li>
-          <span>{name}</span>
+        <li className="space-x-2.5">
+          <span className="capitalize">{name.split("-").join(" ")}</span>
           <span>{date}</span>
         </li>
         <li>{description}</li>

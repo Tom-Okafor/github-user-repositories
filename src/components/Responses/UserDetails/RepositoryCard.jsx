@@ -37,7 +37,7 @@ export default function RepositoryCard({
           <path d="M298.768,319.904V288l79.104-31.104l-79.104-30.752V194.48l113.36,49.008v27.04L298.768,319.904z" />
         </g>
       </svg>
-      <ul className="font-serif space-y-[10px] w-full">
+      <ul className="font-serif space-y-[20px] w-full">
         <li className="flex justify-between">
           <span className="capitalize name font-bold text-lg">
             {name.split("-").join(" ")}
@@ -54,7 +54,10 @@ export default function RepositoryCard({
           })}
         </li>
         <li>
-          <a href={url}>view repository</a>
+          <a href={url} className="p-2 font-bold">
+            view repository
+          </a>
+          
         </li>
       </ul>
     </div>

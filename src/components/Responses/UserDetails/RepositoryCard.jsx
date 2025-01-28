@@ -54,10 +54,10 @@ export default function RepositoryCard({
           })}
         </li>
         <li>
-          <a href={url} className="p-2 font-bold">
+          <a href={url} className="group p-2 font-bold relative">
             view repository
+            <div className="absolute w-0 h-[2px] bg-white -bottom-2 left-0  group-hover:w-full duration-300"></div>
           </a>
-          
         </li>
       </ul>
     </div>

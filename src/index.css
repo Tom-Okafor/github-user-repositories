@@ -9,6 +9,9 @@
 .usercard .repobox:nth-child(odd) .name {
     color: #ec407a;
 }
+.usercard .repobox:nth-child(odd) .stars {
+    color: #ec407a;
+}
 
 .usercard .repobox:nth-child(odd) a {
     color: #ffeb3b;
@@ -22,6 +25,9 @@
 }
 
 .usercard .repobox:nth-child(even) .name {
+    color: #35fd74;
+}
+.usercard .repobox:nth-child(even) .stars {
     color: #35fd74;
 }
 
@@ -42,6 +48,9 @@
 }
 
 .usercard .repobox:nth-child(3n + 3) .name {
+    color: #ffeb3b;
+}
+.usercard .repobox:nth-child(3n + 3) .stars {
     color: #ffeb3b;
 }
 

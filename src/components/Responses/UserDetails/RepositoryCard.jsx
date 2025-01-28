@@ -45,8 +45,8 @@ export default function RepositoryCard({
           <span> {new Date(date).toDateString()}</span>
         </li>
         <li className="max-w-[40ch]">{description}</li>
-        <li>
-          <span>{forks} forks</span> <span>{stars} stars</span>
+        <li className="stars py-2 px-6 bg-[#00000033] w-fit rounded-xl shadow-[inset_0_0_7px_#ccc]">
+          <span className="border-r-2 pr-4 capitalize">{forks} forks</span> <span className="pl-4 capitalize">{stars} stars</span>
         </li>
         <li className="flex gap-6 flex-wrap">
           {languages.map(({ name, color, id }) => {
@@ -54,7 +54,7 @@ export default function RepositoryCard({
           })}
         </li>
         <li>
-          <a href={url} className="group p-2 font-bold relative">
+          <a href={url} className="group p-1 font-bold relative">
             view repository
             <div className="absolute w-0 h-[2px] bg-white -bottom-2 left-0  group-hover:w-full duration-300"></div>
           </a>

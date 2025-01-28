@@ -6,7 +6,12 @@ export default function Language({color, language}) {
         className="size-[10px] rounded-full"
         style={{ backgroundColor: `${color}` }}
       ></div>
-      <p style={{ backgroundColor: `${color}` }} className="px-4 py-1.5 rounded-full text-black font-[cursive]">{language}</p>
+      <p
+        style={{ backgroundColor: `${color}` }}
+        className="px-4 py-1.5 rounded-full text-[#fff] drop-shadow-[0px_7px_0px_#999] hover:drop-shadow-[6px_7px_2px_#bbb] duration-500 font-[cursive]"
+      >
+        {language}
+      </p>
     </div>
   );
 }

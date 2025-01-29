@@ -32,26 +32,25 @@ export default function UserCard() {
     followers,
     following
   );
-  console.log(email == false);
   return (
     <section className="py-8 text-white max-w-[600px] w-[80vw]">
-      <div>
-        <img src={avatarUrl} alt="user profile" />
-        <p>{name}</p>
-        <p>{bio}</p>
+      <div className="py-8 flex flex-col gap-2.5 items-center">
+        <img src={avatarUrl} alt="user profile" className="size-[200px] rounded-full"  />
+        <p className="text-center">{name}</p>
+        <p className="max-w-[55ch] text-center">{bio}</p>
         <p>
           <span>{email}</span> <span>{location}</span>
         </p>
         <a href={url}>Visit Github Page</a>
       </div>
-      <ul>
+      <ul className="flex gap-4 pt-4 pb-8 justify-center *:px-10 *:flex *:flex-col *:items-center *:capitalize *:gap-2">
         <li>
-          <span>{followers}</span> <span>followers</span>
+          <span>{followers}</span> <span className="">followers</span>
         </li>
-        <li>
+        <li className="border-l-2 border-r-2">
           <span>{following}</span> <span>follwing</span>
         </li>
-        <li>
+        <li className="">
           <span>{totalCount}</span> <span>total repositories</span>
         </li>
       </ul>

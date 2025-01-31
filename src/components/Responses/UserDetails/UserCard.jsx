@@ -1,5 +1,5 @@
 import RepositoryCard from "./RepositoryCard";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { QUERY_STATES } from "../../../constants";
 
 export default function UserCard() {
@@ -19,21 +19,19 @@ export default function UserCard() {
       },
     },
   } = useContext(QUERY_STATES);
-  console.log(
-    avatarUrl,
-    bio,
-    name,
-    email,
-    url,
-    nodes,
-    totalCount,
-    topNodes,
-    location,
-    followers,
-    following
-  );
+  const [styles, setStyles] = useState({ classname: "", opacity: 0 });
+
+  useEffect(() => {
+    setStyles({classname: "card-holder", opacity: 0});
+    console.log("new");
+    setTimeout(() => {
+      setStyles({classname: "", opacity: 1});
+    }, 2000);
+  }, [avatarUrl]);
   return (
-    <section className="py-8 text-white max-w-[600px] w-[80vw] card-holder">
+    <section
+      className={`py-8 text-white max-w-[600px] w-[80vw] opacity-[${styles.opacity}] ${styles.classname}`}
+    >
       <div className="py-8 flex flex-col gap-4 items-center">
         <div className="image size-[250px] bg-yellow-400 flex justify-center items-center rounded-full relative overflow-hidden hover:shadow-[0px_0px_20px_#35fd74,0px_10px_40px_#ec407a,0px_0px_60px_#ffeb3b] duration-500">
           <img

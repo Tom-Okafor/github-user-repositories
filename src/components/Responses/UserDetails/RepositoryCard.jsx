@@ -54,7 +54,7 @@ export default function RepositoryCard({
           })}
         </li>
         <li>
-          <a href={url} className="group p-1 font-bold relative">
+          <a href={url} className="group p-1 font-bold relative" target="_blank" rel="noopener noreferrer">
             view repository
             <div className="absolute w-0 h-[2px] bg-white -bottom-2 left-0  group-hover:w-full duration-300"></div>
           </a>

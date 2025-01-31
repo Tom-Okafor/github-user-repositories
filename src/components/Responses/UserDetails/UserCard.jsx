@@ -22,12 +22,29 @@ export default function UserCard() {
   const [styles, setStyles] = useState({ classname: "", opacity: 0 });
 
   useEffect(() => {
-    setStyles({classname: "card-holder", opacity: 0});
+    setStyles({ classname: "card-holder", opacity: 0 });
     console.log("new");
     setTimeout(() => {
-      setStyles({classname: "", opacity: 1});
+      setStyles({ classname: "", opacity: 1 });
     }, 2000);
   }, [avatarUrl]);
+
+  const [circleProperties, setCircleProperties] = useState({
+    x: null,
+    y: null,
+    isPointerOnElement: false,
+    display: "hidden",
+  });
+
+  const { x, y, display } = circleProperties;
+
+  function handlePointerOverLink(event) {
+    console.log(event.target);
+    console.log("the pointer is currently over the anchor tag.");
+  }
+  function handlePointerLeavesLink() {
+    console.log("the pointer has left the anchor tag.");
+  }
   return (
     <section
       className={`py-8 text-white max-w-[600px] w-[80vw] opacity-[${styles.opacity}] ${styles.classname}`}
@@ -62,8 +79,20 @@ export default function UserCard() {
             <span>{totalCount}</span> <span>total repositories</span>
           </li>
         </ul>
-        <a href={url} target="_blank" rel="noopener noreferrer" className="">
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-1/2 py-3 rounded-full text-center tracking-[1.5px] font-semibold font-serif bg-[#ec407a] hover:bg-sky-500 relative overflow-hidden"
+          onPointerOver={(event) => {
+            handlePointerOverLink(event);
+          }}
+          onPointerOut={handlePointerLeavesLink}
+        >
           Visit Github Page
+          <span
+            className={`absolute ${display} top-[${y}] -left-[${y}] size-[20px] bg-[#ec407a] rounded-full duration-500`}
+          ></span>
         </a>
       </div>
 

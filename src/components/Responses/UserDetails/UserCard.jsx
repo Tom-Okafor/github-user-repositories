@@ -33,13 +33,16 @@ export default function UserCard() {
     following
   );
   return (
-    <section className="py-8 text-white max-w-[600px] w-[80vw]">
-      <div className="py-8 flex flex-col gap-2.5 items-center">
-        <img
-          src={avatarUrl}
-          alt="user profile"
-          className="size-[200px] rounded-full"
-        />
+    <section className="py-8 text-white max-w-[600px] w-[80vw] card-holder">
+      <div className="py-8 flex flex-col gap-4 items-center">
+        <div className="image size-[250px] bg-yellow-400 flex justify-center items-center rounded-full relative overflow-hidden hover:shadow-[0px_0px_20px_#35fd74,0px_10px_40px_#ec407a,0px_0px_60px_#ffeb3b] duration-500">
+          <img
+            src={avatarUrl}
+            alt="user profile"
+            className="w-[93%] h-[93%] rounded-full z-40 bg-black"
+          />
+        </div>
+
         <p className="text-center text-2xl tracking-[2px] text-yellow-400 font-semibold">
           {name}
         </p>

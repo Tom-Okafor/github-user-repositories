@@ -9,6 +9,7 @@
 .usercard .repobox:nth-child(odd) .name {
     color: #ec407a;
 }
+
 .usercard .repobox:nth-child(odd) .stars {
     color: #ec407a;
 }
@@ -20,6 +21,7 @@
 .usercard .repobox:nth-child(even) .circle {
     fill: #ec407a;
 }
+
 .usercard .repobox:nth-child(even) a {
     color: #ec407a;
 }
@@ -27,6 +29,7 @@
 .usercard .repobox:nth-child(even) .name {
     color: #35fd74;
 }
+
 .usercard .repobox:nth-child(even) .stars {
     color: #35fd74;
 }
@@ -50,6 +53,7 @@
 .usercard .repobox:nth-child(3n + 3) .name {
     color: #ffeb3b;
 }
+
 .usercard .repobox:nth-child(3n + 3) .stars {
     color: #ffeb3b;
 }
@@ -58,3 +62,47 @@
     fill: #ffeb3b;
 }
 
+.card-holder {
+    animation: appear ease-in-out 2s 1 forwards;
+    -webkit-animation: appear ease-in-out 2s 1 forwards;
+    opacity: 0;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+        filter: none;
+        -webkit-filter: none;
+}
+}
+
+.image::before {
+    content: '';
+    height: 100%;
+    width: 300%;
+    background-color: #ec407a;
+    position: absolute;
+    bottom: -70%;
+    animation: pendulum 5s linear infinite alternate;
+    -webkit-animation: pendulum 5s linear infinite alternate;
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes pendulum {
+        to {
+            transform: rotate(200deg);
+            -webkit-transform: rotate(200deg);
+            -moz-transform: rotate(200deg);
+            -ms-transform: rotate(200deg);
+            -o-transform: rotate(200deg);
+        }
+
+    }
+}

@@ -6,11 +6,11 @@ import { GET_USER_DETAILS, QUERY_STATES } from "./constants";
 import Response from "./components/Responses/Response";
 
 function App() {
-   const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const [getUserDetails, { loading, error, data }] =
     useLazyQuery(GET_USER_DETAILS);
   const handleSubmit = () => {
-    getUserDetails({ variables: { username: inputValue } });
+    inputValue && getUserDetails({ variables: { username: inputValue } });
   };
   return (
     <div className="w-full min-h-lvh flex flex-col justify-center items-center gap-8 bg-slate-900">

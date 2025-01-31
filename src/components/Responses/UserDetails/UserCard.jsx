@@ -40,24 +40,28 @@ export default function UserCard() {
           alt="user profile"
           className="size-[200px] rounded-full"
         />
-        <p className="text-center">{name}</p>
-        <p className="max-w-[55ch] text-center">{bio}</p>
-        <p>
+        <p className="text-center text-2xl tracking-[2px] text-yellow-400 font-semibold">
+          {name}
+        </p>
+        <p className="max-w-[50ch] text-center leading-[1.4] text-[#aaa]">
+          {bio}
+        </p>
+        <p className="text-lg text-yellow-300 tracking-[2px] font-semibold">
           <span>{email}</span> <span>{location}</span>
         </p>
 
-        <ul className="flex gap-4 pt-4 pb-8 justify-center *:px-10 *:flex *:flex-col *:items-center *:capitalize *:gap-2">
+        <ul className="flex pt-8 pb-8 justify-center *:px-10 *:flex *:flex-col *:items-center *:capitalize *:gap-1.5 bg-slate-800 rounded-xl my-8 outline outline-2 outline-[#ec407a] outline-offset-[5px] shadow-[inset_0px_6px_6px_#ffffff99,inset_0px_0px_6px_#ffffff99] hover:shadow-[inset_0px_6px_6px_#ffffff99,inset_0px_0px_6px_#ffffff99,0px_0px_20px_#ec407a,0px_0px_20px_#ec407a,0px_0px_20px_#ec407a] hover:outline-none duration-300">
           <li>
             <span>{followers}</span> <span className="">followers</span>
           </li>
-          <li className="border-l-2 border-r-2">
+          <li className="border-l-2 border-r-2 border-[#ec407a] rounded-full">
             <span>{following}</span> <span>follwing</span>
           </li>
           <li className="">
             <span>{totalCount}</span> <span>total repositories</span>
           </li>
         </ul>
-        <a href={url} target="_blank" rel="noopener noreferrer">
+        <a href={url} target="_blank" rel="noopener noreferrer" className="">
           Visit Github Page
         </a>
       </div>

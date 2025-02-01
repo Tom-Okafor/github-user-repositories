@@ -120,7 +120,9 @@ export default function UserCard() {
       </div>
 
       <div>
-        <h3>top repositories</h3>
+        <h3 className="text-2xl pt- pb-8 mt-8 text-yellow-500 capitalize tracking-[2px] font-bold">
+          top repositories
+        </h3>
         <div className="usercard flex flex-col gap-12 pb-16">
           {topNodes.map(
             ({
@@ -150,7 +152,9 @@ export default function UserCard() {
         </div>
       </div>
       <div>
-        <h3>latest repositories</h3>
+        <h3 className="text-2xl pt- pb-8 mt-8 text-[#74fce4] capitalize tracking-[2px] font-bold">
+          latest repositories
+        </h3>
         <div className="usercard usercard flex flex-col gap-12 pb-16">
           {nodes.map(
             ({

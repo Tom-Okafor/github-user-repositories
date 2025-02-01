@@ -13,7 +13,7 @@ function App() {
     inputValue && getUserDetails({ variables: { username: inputValue } });
   };
   return (
-    <div className="w-full min-h-lvh flex flex-col justify-center items-center gap-8 bg-slate-900">
+    <div className="w-full min-h-lvh flex flex-col justify-center items-center gap-8 bg- from-gradient-to-tr from-slate-900 to-slate-700">
       <Logo />
       <h1 className="text-yellow-400 text-3xl  sm:text-5xl lg:text-6xl font-bold font-serif mt-[100px]">
         Github User

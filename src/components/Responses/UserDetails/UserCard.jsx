@@ -38,7 +38,7 @@ export default function UserCard() {
   const { x, y, display } = circleProperties;
 
   function handlePointerEntersLink(event) {
-    const {offsetX, offsetY} = event.nativeEvent
+    const { offsetX, offsetY } = event.nativeEvent;
     const x = `${offsetX - 15}px`;
     const y = `${offsetY - 15}px`;
     console.log(x, y);
@@ -56,7 +56,7 @@ export default function UserCard() {
   return (
     <section
       className={`py-8 text-white max-w-[600px] w-[80vw] ${styles.classname}`}
-      style={{ opacity: styles.opacity}}
+      style={{ opacity: styles.opacity }}
     >
       <div className="py-8 flex flex-col gap-4 items-center">
         <div className="image size-[250px] bg-yellow-400 flex justify-center items-center rounded-full relative overflow-hidden hover:shadow-[0px_0px_20px_#35fd74,0px_10px_40px_#ec407a,0px_0px_60px_#ffeb3b] duration-500">
@@ -113,7 +113,7 @@ export default function UserCard() {
               transition: "all 150ms ease",
               zIndex: -1,
               filter: "blur(12px)",
-              mixBlendMode: "overlay"
+              mixBlendMode: "overlay",
             }}
           ></span>
         </a>

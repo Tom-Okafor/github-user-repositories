@@ -8,6 +8,9 @@ export default function UserCard() {
 
   const [styles, setStyles] = useState({ classname: "", opacity: 0 });
 
+  const sectionTitleClass =
+    "capitalize tracking-[2px] font-bold text-2xl pt- pb-8 mt-8 ";
+
   useEffect(() => {
     setStyles({ classname: "card-holder", opacity: 0 });
     setTimeout(() => {
@@ -22,8 +25,11 @@ export default function UserCard() {
     >
       <UserBioData />
       {topNodes.length > 0 && (
-        <div>
-          <h3 className="text-2xl pt- pb-8 mt-8 text-yellow-500 capitalize tracking-[2px] font-bold">
+        <div aria-labelledby="top-repositories-title">
+          <h3
+            className={`${sectionTitleClass} text-yellow-500`}
+            id="top-repositories-title"
+          >
             top repositories
           </h3>
           <AllRepositoryCards repositories={topNodes} />
@@ -31,8 +37,11 @@ export default function UserCard() {
       )}
 
       {nodes.length > 0 && (
-        <div>
-          <h3 className="text-2xl pt- pb-8 mt-8 text-[#74fce4] capitalize tracking-[2px] font-bold">
+        <div aria-labelledby="latest-repositories-title">
+          <h3
+            className={`${sectionTitleClass} text-[#74fce4]`}
+            id="latest-repositories-title"
+          >
             latest repositories
           </h3>
           <AllRepositoryCards repositories={nodes} />

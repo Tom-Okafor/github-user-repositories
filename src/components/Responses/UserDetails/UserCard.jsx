@@ -1,7 +1,7 @@
-import RepositoryCard from "./RepositoryCard";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useCallback } from "react";
 import { QUERY_STATES } from "../../../constants";
 import { InputContext } from "../../../context/inputContext";
+import AllRepositoryCards from "./AllRepositoryCards";
 
 export default function UserCard() {
   const {
@@ -22,7 +22,7 @@ export default function UserCard() {
   } = useContext(QUERY_STATES);
 
   const { alternativeName } = useContext(InputContext);
-  console.log(alternativeName)
+  console.log(alternativeName);
 
   const [styles, setStyles] = useState({ classname: "", opacity: 0 });
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function UserCard() {
 
   const { x, y, display } = circleProperties;
 
-  function handlePointerEntersLink(event) {
+  const handlePointerEntersLink = useCallback((event) => {
     const { offsetX, offsetY } = event.nativeEvent;
     const x = `${offsetX - 15}px`;
     const y = `${offsetY - 15}px`;
@@ -49,13 +49,13 @@ export default function UserCard() {
     setCircleProperties((prev) => {
       return { ...prev, x, y, display: "block" };
     });
-  }
+  }, []);
 
-  function handlePointerLeavesLink() {
+  const handlePointerLeavesLink = useCallback(() => {
     setCircleProperties((prev) => {
       return { ...prev, display: "none" };
     });
-  }
+  }, []);
 
   return (
     <section
@@ -127,33 +127,7 @@ export default function UserCard() {
           <h3 className="text-2xl pt- pb-8 mt-8 text-yellow-500 capitalize tracking-[2px] font-bold">
             top repositories
           </h3>
-          <div className="usercard flex flex-col gap-12 pb-16">
-            {topNodes.map(
-              ({
-                name,
-                description,
-                createdAt,
-                id,
-                languages: { nodes },
-                url,
-                stargazerCount,
-                forkCount,
-              }) => {
-                return (
-                  <RepositoryCard
-                    name={name}
-                    description={description}
-                    date={createdAt}
-                    key={id}
-                    url={url}
-                    languages={nodes}
-                    stars={stargazerCount}
-                    forks={forkCount}
-                  />
-                );
-              }
-            )}
-          </div>
+          <AllRepositoryCards repositories={topNodes} />
         </div>
       )}
 
@@ -162,33 +136,7 @@ export default function UserCard() {
           <h3 className="text-2xl pt- pb-8 mt-8 text-[#74fce4] capitalize tracking-[2px] font-bold">
             latest repositories
           </h3>
-          <div className="usercard usercard flex flex-col gap-12 pb-16">
-            {nodes.map(
-              ({
-                name,
-                description,
-                createdAt,
-                id,
-                languages: { nodes },
-                url,
-                stargazerCount,
-                forkCount,
-              }) => {
-                return (
-                  <RepositoryCard
-                    name={name}
-                    description={description}
-                    date={createdAt}
-                    key={id}
-                    url={url}
-                    languages={nodes}
-                    stars={stargazerCount}
-                    forks={forkCount}
-                  />
-                );
-              }
-            )}
-          </div>
+          <AllRepositoryCards repositories={nodes} />
         </div>
       )}
     </section>

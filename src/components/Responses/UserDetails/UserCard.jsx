@@ -1,6 +1,7 @@
 import RepositoryCard from "./RepositoryCard";
 import { useContext, useEffect, useState } from "react";
 import { QUERY_STATES } from "../../../constants";
+import { InputContext } from "../../../context/inputContext";
 
 export default function UserCard() {
   const {
@@ -19,6 +20,10 @@ export default function UserCard() {
       },
     },
   } = useContext(QUERY_STATES);
+
+  const { alternativeName } = useContext(InputContext);
+  console.log(alternativeName)
+
   const [styles, setStyles] = useState({ classname: "", opacity: 0 });
   useEffect(() => {
     setStyles({ classname: "card-holder", opacity: 0 });
@@ -66,8 +71,8 @@ export default function UserCard() {
           />
         </div>
 
-        <p className="text-center text-2xl tracking-[2px] text-yellow-400 font-semibold">
-          {name}
+        <p className="text-center text-2xl tracking-[2px] text-yellow-400 font-semibold capitalize">
+          {name ? name : alternativeName}
         </p>
         <p className="max-w-[50ch] text-center leading-[1.4] text-[#aaa]">
           {bio}

@@ -5,6 +5,7 @@ import Form from "./components/Form";
 import { GET_USER_DETAILS, QUERY_STATES } from "./constants";
 import Response from "./components/Responses/Response";
 import { InputContext } from "./context/inputContext";
+let alternativeName;
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -12,6 +13,8 @@ function App() {
     useLazyQuery(GET_USER_DETAILS);
   const handleSubmit = () => {
     inputValue && getUserDetails({ variables: { username: inputValue } });
+    alternativeName = inputValue;
+    console.log(alternativeName);
   };
   return (
     <div className="w-full min-h-lvh flex flex-col justify-center items-center gap-8 bg-gradient-to-tr from-slate-900 to-slate-700">
@@ -21,11 +24,12 @@ function App() {
       </h1>
 
       <QUERY_STATES.Provider value={{ loading, error, data }}>
-        <InputContext.Provider value={{ inputValue, setInputValue }}>
+        <InputContext.Provider
+          value={{ inputValue, setInputValue, alternativeName }}
+        >
           <Form handleSubmit={handleSubmit} />
+          <Response />
         </InputContext.Provider>
-
-        <Response />
       </QUERY_STATES.Provider>
     </div>
   );

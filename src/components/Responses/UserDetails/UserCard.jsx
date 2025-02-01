@@ -32,22 +32,31 @@ export default function UserCard() {
   const [circleProperties, setCircleProperties] = useState({
     x: null,
     y: null,
-    isPointerOnElement: false,
-    display: "hidden",
+    display: "none",
   });
 
   const { x, y, display } = circleProperties;
 
-  function handlePointerOverLink(event) {
-    console.log(event.target);
-    console.log("the pointer is currently over the anchor tag.");
+  function handlePointerEntersLink(event) {
+    const {offsetX, offsetY} = event.nativeEvent
+    const x = `${offsetX - 15}px`;
+    const y = `${offsetY - 15}px`;
+    console.log(x, y);
+    setCircleProperties((prev) => {
+      return { ...prev, x, y, display: "block" };
+    });
   }
+
   function handlePointerLeavesLink() {
-    console.log("the pointer has left the anchor tag.");
+    setCircleProperties((prev) => {
+      return { ...prev, display: "none" };
+    });
   }
+
   return (
     <section
-      className={`py-8 text-white max-w-[600px] w-[80vw] opacity-[${styles.opacity}] ${styles.classname}`}
+      className={`py-8 text-white max-w-[600px] w-[80vw] ${styles.classname}`}
+      style={{ opacity: styles.opacity}}
     >
       <div className="py-8 flex flex-col gap-4 items-center">
         <div className="image size-[250px] bg-yellow-400 flex justify-center items-center rounded-full relative overflow-hidden hover:shadow-[0px_0px_20px_#35fd74,0px_10px_40px_#ec407a,0px_0px_60px_#ffeb3b] duration-500">
@@ -83,15 +92,28 @@ export default function UserCard() {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-1/2 py-3 rounded-full text-center tracking-[1.5px] font-semibold font-serif bg-[#ec407a] hover:bg-sky-500 relative overflow-hidden"
-          onPointerOver={(event) => {
-            handlePointerOverLink(event);
+          className="w-1/2 py-3 rounded-full text-center tracking-[1.5px] font-semibold font-serif bg-[#ec407a] hover:bg-sky-500 hover:shadow-[0_0_15px_#00e5ff,0_0_15px_#00e5ff,0_0_15px_#00e5ff] relative overflow-hidden z-[1] duration-500"
+          onPointerMove={(event) => {
+            handlePointerEntersLink(event);
           }}
           onPointerOut={handlePointerLeavesLink}
         >
-          Visit Github Page
+          <span style={{ zIndex: 1 }}>Visit Github Page</span>
           <span
-            className={`absolute ${display} top-[${y}] -left-[${y}] size-[20px] bg-[#ec407a] rounded-full duration-500`}
+            style={{
+              position: "absolute",
+              display,
+              top: y,
+              left: x,
+              height: "60px",
+              width: "60px",
+              backgroundColor: "#35fd74",
+              borderRadius: "50%",
+              pointerEvents: "none",
+              transition: "all 200ms ease",
+              zIndex: -1,
+              filter: "blur(12px)",
+            }}
           ></span>
         </a>
       </div>

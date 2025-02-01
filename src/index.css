@@ -71,11 +71,17 @@
 }
 
 @keyframes appear {
+    from {
+        opacity: 0;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+    }
+
     to {
         opacity: 1;
         filter: none;
         -webkit-filter: none;
-}
+    }
 }
 
 .image::before {

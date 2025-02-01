@@ -4,6 +4,7 @@ import Logo from "./components/Logo";
 import Form from "./components/Form";
 import { GET_USER_DETAILS, QUERY_STATES } from "./constants";
 import Response from "./components/Responses/Response";
+import { InputContext } from "./context/inputContext";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -20,11 +21,10 @@ function App() {
       </h1>
 
       <QUERY_STATES.Provider value={{ loading, error, data }}>
-        <Form
-          inputValue={inputValue}
-          handleSubmit={handleSubmit}
-          setInputValue={setInputValue}
-        />
+        <InputContext.Provider value={{ inputValue, setInputValue }}>
+          <Form handleSubmit={handleSubmit} />
+        </InputContext.Provider>
+
         <Response />
       </QUERY_STATES.Provider>
     </div>

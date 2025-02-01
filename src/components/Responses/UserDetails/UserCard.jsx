@@ -20,7 +20,6 @@ export default function UserCard() {
     },
   } = useContext(QUERY_STATES);
   const [styles, setStyles] = useState({ classname: "", opacity: 0 });
-
   useEffect(() => {
     setStyles({ classname: "card-holder", opacity: 0 });
     console.log("new");
@@ -118,71 +117,75 @@ export default function UserCard() {
           ></span>
         </a>
       </div>
+      {topNodes.length > 0 && (
+        <div>
+          <h3 className="text-2xl pt- pb-8 mt-8 text-yellow-500 capitalize tracking-[2px] font-bold">
+            top repositories
+          </h3>
+          <div className="usercard flex flex-col gap-12 pb-16">
+            {topNodes.map(
+              ({
+                name,
+                description,
+                createdAt,
+                id,
+                languages: { nodes },
+                url,
+                stargazerCount,
+                forkCount,
+              }) => {
+                return (
+                  <RepositoryCard
+                    name={name}
+                    description={description}
+                    date={createdAt}
+                    key={id}
+                    url={url}
+                    languages={nodes}
+                    stars={stargazerCount}
+                    forks={forkCount}
+                  />
+                );
+              }
+            )}
+          </div>
+        </div>
+      )}
 
-      <div>
-        <h3 className="text-2xl pt- pb-8 mt-8 text-yellow-500 capitalize tracking-[2px] font-bold">
-          top repositories
-        </h3>
-        <div className="usercard flex flex-col gap-12 pb-16">
-          {topNodes.map(
-            ({
-              name,
-              description,
-              createdAt,
-              id,
-              languages: { nodes },
-              url,
-              stargazerCount,
-              forkCount,
-            }) => {
-              return (
-                <RepositoryCard
-                  name={name}
-                  description={description}
-                  date={createdAt}
-                  key={id}
-                  url={url}
-                  languages={nodes}
-                  stars={stargazerCount}
-                  forks={forkCount}
-                />
-              );
-            }
-          )}
+      {nodes.length > 0 && (
+        <div>
+          <h3 className="text-2xl pt- pb-8 mt-8 text-[#74fce4] capitalize tracking-[2px] font-bold">
+            latest repositories
+          </h3>
+          <div className="usercard usercard flex flex-col gap-12 pb-16">
+            {nodes.map(
+              ({
+                name,
+                description,
+                createdAt,
+                id,
+                languages: { nodes },
+                url,
+                stargazerCount,
+                forkCount,
+              }) => {
+                return (
+                  <RepositoryCard
+                    name={name}
+                    description={description}
+                    date={createdAt}
+                    key={id}
+                    url={url}
+                    languages={nodes}
+                    stars={stargazerCount}
+                    forks={forkCount}
+                  />
+                );
+              }
+            )}
+          </div>
         </div>
-      </div>
-      <div>
-        <h3 className="text-2xl pt- pb-8 mt-8 text-[#74fce4] capitalize tracking-[2px] font-bold">
-          latest repositories
-        </h3>
-        <div className="usercard usercard flex flex-col gap-12 pb-16">
-          {nodes.map(
-            ({
-              name,
-              description,
-              createdAt,
-              id,
-              languages: { nodes },
-              url,
-              stargazerCount,
-              forkCount,
-            }) => {
-              return (
-                <RepositoryCard
-                  name={name}
-                  description={description}
-                  date={createdAt}
-                  key={id}
-                  url={url}
-                  languages={nodes}
-                  stars={stargazerCount}
-                  forks={forkCount}
-                />
-              );
-            }
-          )}
-        </div>
-      </div>
+      )}
     </section>
   );
 }

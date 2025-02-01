@@ -110,9 +110,10 @@ export default function UserCard() {
               backgroundColor: "#35fd74",
               borderRadius: "50%",
               pointerEvents: "none",
-              transition: "all 200ms ease",
+              transition: "all 150ms ease",
               zIndex: -1,
               filter: "blur(12px)",
+              mixBlendMode: "overlay"
             }}
           ></span>
         </a>

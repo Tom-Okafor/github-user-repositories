@@ -12,16 +12,16 @@ export default function RepositoryCard({
   date,
 }) {
   return (
-    <div className="rounded-2xl shadow-[0_0_8px_#74fce4ae] px-8 py-8 text-white relative flex gap-5 repobox bg-slate-800 border-box">
+    <div className="rounded-2xl shadow-[0_0_8px_#74fce4ae] px-8 py-8 text-white relative flex flex-col items-center sm:flex-row gap-5 repobox bg-slate-800 border-box">
       <CodeSvg />
       <ul className="font-serif space-y-[20px] w-full">
-        <li className="flex justify-between">
+        <li className="flex sm:flex-row flex-col sm:justify-between text-center space-y-[5px]">
           <span className="capitalize name font-bold text-lg">
             {name.split("-").join(" ")}
           </span>
           <span> {new Date(date).toDateString()}</span>
         </li>
-        <li className="max-w-[40ch]">{description}</li>
+        <li className="max-w-prose sm:max-w-[40ch] text-center sm:text-left">{description}</li>
         <li className="stars py-2 px-6 bg-[#00000033] w-fit rounded-xl shadow-[inset_0_0_7px_#ccc]">
           <span className="border-r-2 pr-4 capitalize">{`${forks} ${
             forks > 1 ? "forks" : "fork"

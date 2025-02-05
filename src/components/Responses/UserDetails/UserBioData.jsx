@@ -5,7 +5,7 @@ import LinkToAccount from "./LinkToAccount";
 
 export default function UserBioData() {
    return (
-    <div className="py-8 flex flex-col gap-4 items-center">
+    <div className="pb-8 flex flex-col gap-4 items-center">
       <ProfileImage />
       <PersonalDetails />
       <AccountDetails />

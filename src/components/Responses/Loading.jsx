@@ -16,7 +16,7 @@ export default function Loading({ loading }) {
       interval = setInterval(() => {
         const IMAGE_INDEX = Math.floor(Math.random() * LOADING_IMAGES.length);
         setCurrentImage(LOADING_IMAGES[IMAGE_INDEX]);
-      }, 500);
+      }, 200);
     }
 
     return () => {

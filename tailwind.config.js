@@ -6,6 +6,11 @@ export default {
       screens: {
         mb: "500px",
       },
+      fontFamily: {
+        head: ["Ultra", "serif"],
+        subhead: ["Autour One", "serif"],
+        main: ["Itim", "serif"],
+      },
     },
   },
   plugins: [],

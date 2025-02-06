@@ -27,7 +27,7 @@ export default function Loading({ loading }) {
         aria-hidden="true"
         className="h-[250px]"
       />
-      <h3 className="text-[#74fce4] animate-pulse text-lg font-[courier]">
+      <h3 className="text-[#74fce4] animate-pulse text-lg font-subhead">
         loading... Please wait.
       </h3>
     </div>

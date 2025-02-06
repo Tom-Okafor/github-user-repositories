@@ -6,7 +6,7 @@ import SubmitInput from "./SubmitInput";
 export default function Form({ handleSubmit }) {
   return (
     <form
-      className="flex gap-6 flex-col mb:flex-row justify-center items-center w-full"
+      className="flex gap-6 flex-col mb:flex-row justify-center items-center w-full font-main"
       onSubmit={(e) => {
         e.preventDefault();
         handleSubmit();

@@ -2,63 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-.usercard .repobox:nth-child(odd) .circle {
+.usercard .repoparent:nth-child(odd) .circle {
     fill: #ffeb3b;
 }
 
-.usercard .repobox:nth-child(odd) .name {
+.usercard .repoparent:nth-child(odd) .name {
     color: #ec407a;
 }
 
-.usercard .repobox:nth-child(odd) .stars {
+.usercard .repoparent:nth-child(odd) .stars {
     color: #ec407a;
 }
 
-.usercard .repobox:nth-child(odd) a {
+.usercard .repoparent:nth-child(odd) a {
     color: #ffeb3b;
 }
 
-.usercard .repobox:nth-child(even) .circle {
+.usercard .repoparent:nth-child(even) .circle {
     fill: #ec407a;
 }
 
-.usercard .repobox:nth-child(even) a {
+.usercard .repoparent:nth-child(even) a {
     color: #ec407a;
 }
 
-.usercard .repobox:nth-child(even) .name {
+.usercard .repoparent:nth-child(even) .name {
     color: #35fd74;
 }
 
-.usercard .repobox:nth-child(even) .stars {
+.usercard .repoparent:nth-child(even) .stars {
     color: #35fd74;
 }
 
-.usercard .repobox:nth-child(odd) .g {
+.usercard .repoparent:nth-child(odd) .g {
     fill: #ec407a;
 }
 
-.usercard .repobox:nth-child(even) .g {
+.usercard .repoparent:nth-child(even) .g {
     fill: #35fd74;
 }
 
-.usercard .repobox:nth-child(3n + 3) .circle {
+.usercard .repoparent:nth-child(3n + 3) .circle {
     fill: #00c853;
 }
 
-.usercard .repobox:nth-child(3n + 3) a {
+.usercard .repoparent:nth-child(3n + 3) a {
     color: #00c853;
 }
 
-.usercard .repobox:nth-child(3n + 3) .name {
+.usercard .repoparent:nth-child(3n + 3) .name {
     color: #ffeb3b;
 }
 
-.usercard .repobox:nth-child(3n + 3) .stars {
+.usercard .repoparent:nth-child(3n + 3) .stars {
     color: #ffeb3b;
 }
 
-.usercard .repobox:nth-child(3n + 3) .g {
+.usercard .repoparent:nth-child(3n + 3) .g {
     fill: #ffeb3b;
 }
 
@@ -111,4 +111,46 @@
         }
 
     }
+
+
+    .repoparent {
+        perspective: 700px;
+    }
+
+    .repobox {
+        animation: slide 1s linear forwards;
+        -webkit-animation: slide 1s linear forwards;
+        opacity: 0;
+        animation-timeline: view();
+        animation-range-start: 0%;
+        animation-range-end: 100%;
+        transform: rotateX(80deg);
+        -webkit-transform: rotateX(80deg);
+        -moz-transform: rotateX(80deg);
+        -ms-transform: rotateX(80deg);
+        -o-transform: rotateX(80deg);
+}
+
+    @keyframes slide {
+        60% {
+            opacity: 1;
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+        }
+
+
+        to {
+            transform: rotateX(-90deg);
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            -ms-transform: rotateX(-90deg);
+            -o-transform: rotateX(-90deg);
+            opacity: 1;
+}
+
+    }
+
 }

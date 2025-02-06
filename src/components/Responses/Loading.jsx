@@ -6,12 +6,17 @@ export default function Loading({ loading }) {
   const [currentImage, setCurrentImage] = useState("dancingmonkey1.png");
 
   useEffect(() => {
+    //preload images
+    LOADING_IMAGES.map((image) => {
+      const img = new Image();
+      img.src = image;
+    });
     let interval;
     if (loading) {
       interval = setInterval(() => {
         const IMAGE_INDEX = Math.floor(Math.random() * LOADING_IMAGES.length);
         setCurrentImage(LOADING_IMAGES[IMAGE_INDEX]);
-      }, 100);
+      }, 500);
     }
 
     return () => {

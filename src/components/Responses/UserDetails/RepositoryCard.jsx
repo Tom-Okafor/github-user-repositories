@@ -21,8 +21,10 @@ export default function RepositoryCard({
           </span>
           <span> {new Date(date).toDateString()}</span>
         </li>
-        <li className="max-w-prose sm:max-w-[40ch] text-center sm:text-left">{description}</li>
-        <li className="stars py-2 px-6 bg-[#00000033] w-fit rounded-xl shadow-[inset_0_0_7px_#ccc]">
+        <li className="max-w-prose sm:max-w-[40ch] text-center sm:text-left">
+          {description}
+        </li>
+        <li className="stars py-2 px-4 mx-auto sm:mx-0 sm:px-6 bg-[#00000033] w-fit rounded-xl shadow-[inset_0_0_7px_#ccc] flex sm:block ">
           <span className="border-r-2 pr-4 capitalize">{`${forks} ${
             forks > 1 ? "forks" : "fork"
           }`}</span>{" "}
@@ -30,12 +32,12 @@ export default function RepositoryCard({
             stars > 1 ? "stars" : "star"
           }`}</span>
         </li>
-        <li className="flex gap-6 flex-wrap">
+        <li className="flex gap-6 flex-wrap justify-center sm:justify-start mbb-2">
           {languages.map(({ name, color, id }) => {
             return <Language color={color} language={name} key={id} />;
           })}
         </li>
-        <li>
+        <li className="text-center sm:text-left">
           <a
             href={url}
             className="group p-1 font-bold relative"

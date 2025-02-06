@@ -14,7 +14,6 @@ function App() {
   const handleSubmit = () => {
     inputValue && getUserDetails({ variables: { username: inputValue } });
     alternativeName = inputValue;
-    console.log(alternativeName);
   };
   return (
     <div className="w-full min-h-lvh flex flex-col justify-center items-center gap-8 bg-gradient-to-tr from-slate-900 to-slate-700">

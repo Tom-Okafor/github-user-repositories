@@ -5,9 +5,10 @@ import Form from "./components/Form";
 import { GET_USER_DETAILS, QUERY_STATES } from "./constants";
 import Response from "./components/Responses/Response";
 import { InputContext } from "./context/inputContext";
-let alternativeName;
+import Footer from "./components/Footer";
 
 function App() {
+  let alternativeName;
   const [inputValue, setInputValue] = useState("");
   const [getUserDetails, { loading, error, data }] =
     useLazyQuery(GET_USER_DETAILS);
@@ -30,6 +31,8 @@ function App() {
           <Response />
         </InputContext.Provider>
       </QUERY_STATES.Provider>
+
+      <Footer />
     </div>
   );
 }

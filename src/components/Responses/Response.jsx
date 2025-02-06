@@ -1,4 +1,4 @@
-import { QUERY_STATES } from "../../constants";
+import { QUERY_STATES } from "../../constants/index";
 import { useContext } from "react";
 import Loading from "./Loading";
 import Error from "./Error";

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { InputContext } from "../../../context/inputContext";
+import { InputContext } from "../../../context/InputContext";
 import useUserContext from "../../../hooks/useUserContext";
 
 export default function PersonalDetails() {

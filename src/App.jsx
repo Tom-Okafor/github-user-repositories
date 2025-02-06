@@ -4,7 +4,7 @@ import Logo from "./components/Logo";
 import Form from "./components/Form";
 import { GET_USER_DETAILS, QUERY_STATES } from "./constants";
 import Response from "./components/Responses/Response";
-import { InputContext } from "./context/inputContext";
+import { InputContext } from "./context/InputContext";
 import Footer from "./components/Footer";
 let alternativeName;
 

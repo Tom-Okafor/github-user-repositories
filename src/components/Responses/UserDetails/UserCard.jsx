@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import UserBioData from "./userBioData";
+import UserBioData from "./UserBioData";
 import AllRepositoryCards from "./AllRepositoryCards";
 import useUserContext from "../../../hooks/useUserContext";
 

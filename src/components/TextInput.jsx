@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { InputContext } from "../context/inputContext";
+import { InputContext } from "../context/InputContext";
 
 export default function TextInput() {
   const { inputValue, setInputValue } = useContext(InputContext);

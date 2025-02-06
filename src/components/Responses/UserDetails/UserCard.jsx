@@ -37,7 +37,7 @@ export default function UserCard() {
       )}
 
       {nodes.length > 0 && (
-        <div aria-labelledby="latest-repositories-title">
+        <div aria-labelledby="latest-repositories-title" className="mb-[100px]">
           <h3
             className={`${sectionTitleClass} text-[#74fce4]`}
             id="latest-repositories-title"

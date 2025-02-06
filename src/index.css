@@ -129,7 +129,7 @@
         -moz-transform: rotateX(80deg);
         -ms-transform: rotateX(80deg);
         -o-transform: rotateX(80deg);
-}
+    }
 
     @keyframes slide {
         60% {
@@ -149,8 +149,25 @@
             -ms-transform: rotateX(-90deg);
             -o-transform: rotateX(-90deg);
             opacity: 1;
-}
+        }
 
     }
+
+    #top-repositories-title,
+    #latest-repositories-title {
+        opacity: 0;
+        animation: appear ease-out forwards;
+        -webkit-animation: appear ease-in forwards;
+        animation-timeline: view();
+        animation-range: 50px 50%;
+    }
+
+    @keyframes appear {
+        to {
+            opacity: 1;
+        }
+
+    }
+
 
 }

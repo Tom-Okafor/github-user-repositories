@@ -9,7 +9,7 @@ export default function UserCard() {
   const [styles, setStyles] = useState({ classname: "", opacity: 0 });
 
   const sectionTitleClass =
-    "capitalize tracking-[2px] font-bold text-2xl pt- pb-8 mt-8 font-subhead";
+    "capitalize tracking-[2px] font-bold text:lg sm:text-2xl pt- pb-8 mt-8 font-subhead";
 
   useEffect(() => {
     setStyles({ classname: "card-holder", opacity: 0 });

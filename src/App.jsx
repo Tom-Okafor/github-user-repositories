@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="w-full min-h-lvh flex flex-col justify-center items-center gap-8 bg-gradient-to-tr from-slate-900 to-slate-700">
       <Logo />
-      <h1 className="text-yellow-400 text-3xl  sm:text-5xl lg:text-6xl font-bold font-serif mt-[100px] font-head uppercase tracking-[3px] sm:tracking-[5px]">
+      <h1 className="text-yellow-400 text-3xl  sm:text-5xl lg:text-6xl font-bold mt-[100px] font-head uppercase tracking-[3px] sm:tracking-[5px]">
         Github User
       </h1>
 

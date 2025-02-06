@@ -13,7 +13,7 @@ export default function RepositoryCard({
 }) {
   return (
     <div className="repoparent">
-      <div className="repobox rounded-2xl shadow-[0_0_8px_#74fce4ae] px-8 py-8 text-white relative flex flex-col items-center sm:flex-row gap-5 bg-slate-800 border-box hover:bg-[#74fce43a] hover:shadow-[0_0_50px_#74fce4ae,0_0_50px_#74fce4ae,0_0_50px_#74fce49e] duration-500">
+      <div className="repobox rounded-2xl shadow-[0_0_8px_#74fce4ae] px-8 py-8 text-white relative flex flex-col items-center sm:flex-row gap-5 bg-slate-800 border-box hover:shadow-[0_0_50px_#74fce4ae,0_0_50px_#74fce4ae,0_0_50px_#74fce49e] duration-500">
         <CodeSvg />
         <ul className="space-y-[20px] w-full">
           <li className="flex sm:flex-row flex-col sm:justify-between text-center space-y-[5px] font-subhead">

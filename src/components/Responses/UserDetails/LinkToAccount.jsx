@@ -30,7 +30,7 @@ export default function LinkToAccount() {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-[100%] sm:w-1/2 py-3 rounded-full text-center tracking-[1.5px] font-semibold font-subhead bg-[#ec407a] hover:bg-sky-500 hover:shadow-[0_0_15px_#00e5ff,0_0_15px_#00e5ff,0_0_15px_#00e5ff] relative overflow-hidden z-[1] duration-500"
+      className="w-[100%] sm:w-1/2 py-3 rounded-full text-center tracking-[1.5px] font-semibold font-subhead bg-[#ec407a] hover:bg-sky-500 hover:shadow-[0_0_15px_#00e5ff,0_0_15px_#00e5ff,0_0_15px_#00e5ff] relative overflow-hidden z-[1] duration-500 text-md"
       onPointerMove={(event) => {
         handlePointerEntersLink(event);
       }}

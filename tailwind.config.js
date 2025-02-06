@@ -7,9 +7,11 @@ export default {
         mb: "500px",
       },
       fontFamily: {
-        head: ["Ultra", "serif"],
+        head: ["Ultra", "sans serif"],
         subhead: ["Autour One", "serif"],
         main: ["Itim", "serif"],
+        fancy: ["Lugrasimo", "cursive"],
+        simple: ["Yatra One", "serif"],
       },
     },
   },
